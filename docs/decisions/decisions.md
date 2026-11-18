@@ -15,7 +15,7 @@ Decisões obtidas na entrevista de produto. Questões técnicas sem validação 
 | D-009 | Sem provedor de IA, fluxos de IA ficam bloqueados, mas funções manuais continuam disponíveis. O usuário conecta e paga seu provedor. | Decidido; provedores/métodos disponíveis a validar |
 | D-010 | Credenciais do provedor de IA ficam no Keychain e chamadas partem do iPhone por HTTPS/TLS; não armazenar credenciais no backend do app ou em logs. | Decidido |
 | D-011 | A nuvem armazena dados com criptografia em trânsito e em repouso; recuperação é administrada pelo serviço, sem chave de recuperação exclusiva do usuário. | Decidido |
-| D-012 | O agente não age enquanto o app está fechado. Reavaliação e reorganização ocorrem com o app aberto e deixam histórico/aviso interno. | Decidido |
+| D-012 | A IA não aplica ações ou reorganizações em segundo plano. Um job diário pode consultar o Google Calendar e preparar propostas que aguardam revisão e aprovação; com o app aberto, replanejamentos podem ser aplicados e registrados. | Decidido |
 | D-013 | Dados pessoais mínimos podem ser enviados ao provedor escolhido; indicadores simples de energia são aceitáveis. Dados de alto risco e texto bruto de e-mail ficam fora. | Decidido |
 | D-014 | Gmail e MCPs personalizados entram depois; começar por conectores selecionados pelo app e com permissões controladas. | Decidido |
 | D-015 | Planejamento e edição manual, cronômetro e registro de progresso devem funcionar offline; sincronizar quando a conexão voltar. | Decidido |
@@ -23,6 +23,7 @@ Decisões obtidas na entrevista de produto. Questões técnicas sem validação 
 | D-017 | gVisor não entra inicialmente: não há execução de código arbitrário; isolamento por usuário é responsabilidade da arquitetura de dados/API/contexto. | Decidido |
 | D-018 | Painéis usam marcos concretos como medida principal de progresso; horas e tarefas são contexto. Barras comparam planejado/realizado; radar mostra ações por área. | Decidido |
 | D-019 | Interpretações da IA são hipóteses apoiadas em dados e submetidas à validação do usuário. Dados registrados não são alterados pela interpretação. | Decidido |
+| D-020 | Um job diário pode consultar o Google Calendar e preparar propostas de reorganização quando mudanças afetarem o plano; propostas nunca são aplicadas sem revisão e aprovação. | Decidido; viabilidade e mecanismo técnico a definir |
 
 ## Questões em aberto
 

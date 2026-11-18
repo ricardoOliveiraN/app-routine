@@ -51,7 +51,7 @@ O produto deve reduzir o problema de criar um plano semanal irrealista, não sab
 ### 4.3 Reorganização durante a semana
 
 - A IA pode reorganizar tarefas gerenciadas pelo app quando o app está aberto, por exemplo, após a pessoa informar que seu tempo mudou.
-- O agente não executa reorganizações enquanto o app está fechado. Ao abrir, o app pode reavaliar o plano com os dados atualizados.
+- Um job diário pode consultar o Google Calendar com o app fechado e preparar uma proposta apenas quando eventos novos, alterados ou removidos afetarem tarefas planejadas ou disponibilidade. O job não aplica mudanças; o usuário revisa e aprova propostas.
 - Uma reorganização automática gera um único aviso dentro do app e um registro detalhado do que mudou.
 - Compromissos existentes de trabalho e datas de entrega acadêmicas são âncoras: a IA não os move nem altera.
 - Quando uma tarefa não couber na semana, a IA sugere uma data futura; essa sugestão só entra na agenda após revisão.
@@ -115,7 +115,7 @@ O produto deve reduzir o problema de criar um plano semanal irrealista, não sab
 
 ## 7. Requisitos de IA e privacidade
 
-- A IA só funciona quando há provedor configurado e o app está aberto.
+- A IA funciona quando há provedor configurado e o app está aberto. Um job diário pode monitorar mudanças no Google Calendar e preparar propostas de reorganização, sem aplicá-las em segundo plano.
 - A chave/token do provedor de IA fica no Keychain do iPhone e não é armazenado na nuvem do app nem em logs.
 - Chamadas seguem diretamente do aparelho ao provedor escolhido, usando HTTPS/TLS e validação padrão de certificados do iOS.
 - O provedor recebe o prompt e os dados que o app enviar; o app envia somente o contexto necessário aprovado pelo usuário.

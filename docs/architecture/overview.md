@@ -4,7 +4,7 @@
 
 ## Contexto
 
-O produto terá um cliente iOS em React Native, armazenamento em nuvem e integrações diretas com serviços do usuário. O usuário escolhe e paga seu provedor de IA. O app não executa ações de agente enquanto está fechado; o processamento agentivo começa quando o app está aberto.
+O produto terá um cliente iOS em React Native, armazenamento em nuvem e integrações diretas com serviços do usuário. O usuário escolhe e paga seu provedor de IA. A IA não aplica ações em segundo plano; um job diário pode consultar o Google Calendar e preparar propostas para revisão.
 
 ## Componentes conceituais
 
@@ -21,7 +21,7 @@ O produto terá um cliente iOS em React Native, armazenamento em nuvem e integra
 - O modelo não recebe uma credencial Google ampla nem pode decidir livremente a conta-alvo. O app controla ferramentas, escopos e conta autorizada.
 - Calendários adicionais são somente leitura. Eventos preexistentes na conta principal também são tratados como somente leitura pelo agente.
 - Escritas no calendário ficam limitadas a blocos gerenciados pelo app. Âncoras de trabalho e prazos acadêmicos nunca são movidos.
-- Execução de IA e replanejamento não ocorrem em segundo plano. Ao abrir o app, mudanças podem ser processadas e registradas com um único aviso interno.
+- Um job diário pode consultar mudanças no Google Calendar com o app fechado e preparar propostas quando afetarem tarefas ou disponibilidade; não aplica reorganizações em segundo plano. Com o app aberto, o replanejamento pode ocorrer e fica registrado com um único aviso interno.
 - Dados offline sincronizam quando houver conexão. O primeiro escopo presume um dispositivo por usuário; conflitos entre dispositivos ficam para definição futura.
 
 ## Isolamento por usuário e gVisor
@@ -37,7 +37,7 @@ gVisor não é requisito da primeira versão: o agente usa ferramentas controlad
 3. Montar contexto mínimo para o provedor de IA selecionado.
 4. Receber proposta estruturada e validar limites de domínio no app.
 5. No planejamento de domingo, mostrar a proposta para revisão antes da escrita.
-6. Durante a semana, reorganizações automáticas podem alterar somente tarefas/blocos gerenciados pelo app, com histórico e notificação interna.
+6. Durante a semana, com o app aberto, reorganizações podem alterar somente tarefas/blocos gerenciados pelo app, com histórico e aviso interno. Um job diário pode preparar propostas com base em mudanças no calendário, sempre aguardando aprovação.
 
 ## Decisões técnicas pendentes
 
